@@ -17,8 +17,52 @@ class RootViewController: UIViewController {
         count: 6
     )
     
-    let answers = ["After", "later", "block", "there", "ultra"]
+    let answers = [
+        "Abuse",    "Alive",    "Array",    "Begin",
+        "Actor",    "Allow",    "Aside",    "Begun",
+        "Admit",    "Along",    "Audio",    "Below",
+        "Adopt",    "Alter",    "Audit",    "Bench",
+        "After",    "Anger",    "Award",    "Birth",
+        "Agree",    "Apart",    "Baker",    "Blind",
+        "Bound",    "Calif",    "Civil",    "Crash",
+        "Brief",    "Chart",    "Clock",    "Curve",
+        "Broke",   "Check",    "Coast",   "Dance",
+        "Built",    "Child",    "Court",    "Death",
+        "Debut",    "Entry",    "Forth",    "Group",
+        "Doing",    "Event",    "Found",    "Guess",
+        "Draft",    "Exist",    "Fraud",    "Happy",
+        "Drama",    "Extra",    "Fresh",    "Harry",
+        "Drawn",    "Faith",    "Front",    "Heart",
+        "Dream",    "False",    "Fruit",    "Heavy",
+        "Dress",    "Fault",    "Fully",    "Hence",
+        "Drill",    "Fibre",    "Funny",    "Night",
+        "Drink",    "Field",    "Giant",    "Horse",
+        "Eager",    "Final",    "Going",    "Ideal",
+        "Legal",    "Music",    "Mouth",    "Ought",
+        "Level",    "Match",    "Movie",    "Paint",
+        "Light",    "Mayor",    "Needs",    "Paper",
+        "Peace",    "Power",    "Radio",    "Round",
+        "Panel",    "Press",    "Raise",    "Route",
+        "Pilot",    "Prior",    "Ready",    "Scope",
+        "Place",    "Proof",    "Right",    "Sense",
+        "Plant",    "Queen",    "Quick",    "Shall",
+        "Point",    "Quiet",    "Roman",    "Share",
+        "Sheet",    "Spare",    "Style",    "Times",
+        "Sixty",    "Start",    "Texas",    "Treat",
+        "Small",    "Still",    "There",    "Truck",
+        "South",    "Study",    "Throw",    "Until",
+        "Usual",    "Train",    "Wheel",    "Wrote",
+        "Valid",    "World",    "Where",    "Yield",
+        "Value",    "Worry",    "Which",    "Young",
+        "Video",    "Worse",    "While",    "Youth",
+        "Virus",    "Worst",    "White",    "Worth",
+        "Visit",    "Would",    "Vital",    "Voice",
+        "zaddy",    "zafus",    "zambo",    "zappy"
+    ]
     var answer = ""
+    var needsToPressEnter = false
+    var lastCursorSection: Int = -1
+    var isFirstPressForBackspace = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +88,7 @@ class RootViewController: UIViewController {
         keyboard.didMove(toParent: self)
         keyboard.view.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(keyboard.view)
-        
+                
         addConstraints()
     }
     
@@ -61,10 +105,6 @@ class RootViewController: UIViewController {
             keyboard.view.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             keyboard.view.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
         ])
-    }
-    
-    private final func pickAnAnswer() {
-        answer = answers.randomElement() ?? "words"
     }
 }
 

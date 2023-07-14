@@ -9,8 +9,11 @@ import UIKit
 
 class KeyboardViewController: UIViewController {
     
-    let letters = ["qwertyuıopğü", "asdfghjklşi", "zxcvbnnmöç"]
+    let letters = ["qwertyuıopğü", "asdfghjklşi", "zxcvbnmöç", "12"]
     internal var keys: [[Character]] = []
+    internal let enterKey: Character = "1"
+    internal let backspaceKey: Character = "2"
+    internal let specialKeysWidth: CGFloat = 95
     
     public weak var delegate: KeyboardViewControllerDelegate? = nil
     

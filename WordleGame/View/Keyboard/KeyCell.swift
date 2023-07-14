@@ -49,8 +49,35 @@ class KeyCell: UICollectionViewCell {
         label.text = nil
     }
     
-    public func configure(withLetter letter: Character) {
-        label.text = String(letter).uppercased()
+    public func configure(withLetter letter: Character, isEnterKey: Bool = false, isBackspaceKey: Bool = false) {
+        if isEnterKey {
+            label.text = "Enter"
+        } else if isBackspaceKey {
+            label.text = "Delete"
+        } else {
+            label.text = String(letter).uppercased()
+        }
+    }
+    
+    // Animations
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        // Shrink contentView size to animate on touchEnd
+        self.contentView.transform = .init(scaleX: 0.85, y: 0.85)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        UIView.animate(withDuration: 0.1, animations: {
+            self.contentView.transform = .identity
+        })
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
+        UIView.animate(withDuration: 0.1, animations: {
+            self.contentView.transform = .identity
+        })
     }
 }
 

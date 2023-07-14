@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F20E83EF2A61451A0043E072 /* RootViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20E83EE2A61451A0043E072 /* RootViewController+Helpers.swift */; };
+		F20E83F12A61973D0043E072 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20E83F02A61973D0043E072 /* Alerts.swift */; };
+		F20E83F32A6197A00043E072 /* PosibileGameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20E83F22A6197A00043E072 /* PosibileGameResult.swift */; };
+		F20E83F52A619E200043E072 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20E83F42A619E200043E072 /* Extensions.swift */; };
 		F2D374812A6026C6007E4D84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D374802A6026C6007E4D84 /* AppDelegate.swift */; };
 		F2D374832A6026C6007E4D84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D374822A6026C6007E4D84 /* SceneDelegate.swift */; };
 		F2D374852A6026C6007E4D84 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D374842A6026C6007E4D84 /* RootViewController.swift */; };
@@ -27,6 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F20E83EE2A61451A0043E072 /* RootViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootViewController+Helpers.swift"; sourceTree = "<group>"; };
+		F20E83F02A61973D0043E072 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		F20E83F22A6197A00043E072 /* PosibileGameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosibileGameResult.swift; sourceTree = "<group>"; };
+		F20E83F42A619E200043E072 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F2D3747D2A6026C6007E4D84 /* WordleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2D374802A6026C6007E4D84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2D374822A6026C6007E4D84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +137,8 @@
 		F2D374982A60289D007E4D84 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F20E83F02A61973D0043E072 /* Alerts.swift */,
+				F20E83F22A6197A00043E072 /* PosibileGameResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				F2D374AD2A6045CC007E4D84 /* Utilities.swift */,
+				F20E83F42A619E200043E072 /* Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -192,6 +203,7 @@
 			children = (
 				F2D374842A6026C6007E4D84 /* RootViewController.swift */,
 				F2D374B12A6049F3007E4D84 /* RootViewController+Protocols.swift */,
+				F20E83EE2A61451A0043E072 /* RootViewController+Helpers.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -268,8 +280,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2D374852A6026C6007E4D84 /* RootViewController.swift in Sources */,
+				F20E83F52A619E200043E072 /* Extensions.swift in Sources */,
 				F2D374A32A603601007E4D84 /* KeyCell.swift in Sources */,
+				F20E83F12A61973D0043E072 /* Alerts.swift in Sources */,
 				F2D374AE2A6045CC007E4D84 /* Utilities.swift in Sources */,
+				F20E83F32A6197A00043E072 /* PosibileGameResult.swift in Sources */,
 				F2D374B42A604A9B007E4D84 /* BoardViewController+Protocol.swift in Sources */,
 				F2D374812A6026C6007E4D84 /* AppDelegate.swift in Sources */,
 				F2D374832A6026C6007E4D84 /* SceneDelegate.swift in Sources */,
@@ -278,6 +293,7 @@
 				F2D374A52A6037A4007E4D84 /* KeyboardViewController+Helpers.swift in Sources */,
 				F2D3749D2A60296A007E4D84 /* BoardViewController.swift in Sources */,
 				F2D374B02A60494F007E4D84 /* KeyboardViewController+Protocol.swift in Sources */,
+				F20E83EF2A61451A0043E072 /* RootViewController+Helpers.swift in Sources */,
 				F2D3749F2A603550007E4D84 /* KeyboardViewController+UICollectionViewDelegate.swift in Sources */,
 				F2D374B22A6049F3007E4D84 /* RootViewController+Protocols.swift in Sources */,
 				F2D374AB2A604066007E4D84 /* GuessCell.swift in Sources */,

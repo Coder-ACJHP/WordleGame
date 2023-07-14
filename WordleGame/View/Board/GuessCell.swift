@@ -10,7 +10,9 @@ import UIKit
 
 class GuessCell: UICollectionViewCell {
     
+    public var letter: Character? = nil
     static let id = "BoardGuessCellIdentifier"
+    
     
     private let label: UILabel = {
         let label = UILabel(frame: .zero)
@@ -50,9 +52,11 @@ class GuessCell: UICollectionViewCell {
         super.prepareForReuse()
         
         label.text = nil
+        letter = nil
     }
     
     public func configure(withLetter letter: Character?) {
+        self.letter = letter
         label.text = letter != nil ?  String(letter!).uppercased() : nil
     }
 }

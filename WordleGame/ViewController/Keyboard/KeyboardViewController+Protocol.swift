@@ -9,4 +9,6 @@ import Foundation
 
 protocol KeyboardViewControllerDelegate: AnyObject {
     func keyboardViewController(_ viewController: KeyboardViewController, didTapKey letter: Character)
+    func keyboardViewControllerDidTapEnterKey(_ viewController: KeyboardViewController)
+    func keyboardViewControllerDidTapDeleteKey(_ viewController: KeyboardViewController)
 }

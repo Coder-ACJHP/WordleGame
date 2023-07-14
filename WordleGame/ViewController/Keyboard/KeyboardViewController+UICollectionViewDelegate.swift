@@ -20,11 +20,12 @@ extension KeyboardViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        var padding: CGFloat = .zero
         let margin: CGFloat = 20
-        let widthHeight = (collectionView.frame.size.width - margin) / 12
+        // Check current key to change enter & backspace buttons size
+        var widthHeight = (collectionView.frame.size.width - margin) / 12
+        if section == 3 { widthHeight = specialKeysWidth }
         let itemCount = CGFloat(collectionView.numberOfItems(inSection: section))
-        padding = (collectionView.frame.size.width - (widthHeight * itemCount) - (2 * itemCount)) / 2
+        let padding = (collectionView.frame.size.width - (widthHeight * itemCount) - (2 * itemCount)) / 2
         return UIEdgeInsets(top: 2, left: padding, bottom: 2, right: padding)
     }
     
@@ -33,6 +34,12 @@ extension KeyboardViewController: UICollectionViewDelegate, UICollectionViewData
         // Calculate cell size (as a divider always select first section count)
         let margin: CGFloat = 20
         let widthHeight = (collectionView.frame.size.width - margin) / CGFloat(keys[0].count)
+        
+        // Check current key to change enter & backspace buttons size
+        let currentKey = keys[indexPath.section][indexPath.row]
+        if currentKey == enterKey || currentKey == backspaceKey {
+            return CGSize(width: specialKeysWidth, height: widthHeight * 1.4)
+        }
         return CGSize(width: widthHeight, height: widthHeight * 1.4)
     }
     
@@ -44,14 +51,31 @@ extension KeyboardViewController: UICollectionViewDelegate, UICollectionViewData
             fatalError("Cannot dequeue reusable cell with \(KeyCell.id)!")
         }
         let letter = keys[indexPath.section][indexPath.row]
-        keyCell.configure(withLetter: letter)
+        
+        // Check current key to change enter & backspace buttons size
+        let currentKey = keys[indexPath.section][indexPath.row]
+        if currentKey == enterKey {
+            keyCell.configure(withLetter: letter, isEnterKey: true)
+        } else if currentKey == backspaceKey {
+            keyCell.configure(withLetter: letter, isBackspaceKey: true)
+        } else {
+            keyCell.configure(withLetter: letter)
+        }
+        
         return keyCell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let tappedKeyLetter = keys[indexPath.section][indexPath.row]
-        delegate?.keyboardViewController(self, didTapKey: tappedKeyLetter)
+        let currentKey = keys[indexPath.section][indexPath.row]
+        if currentKey == enterKey {
+            delegate?.keyboardViewControllerDidTapEnterKey(self)
+        } else if currentKey == backspaceKey {
+            delegate?.keyboardViewControllerDidTapDeleteKey(self)
+        } else {
+            delegate?.keyboardViewController(self, didTapKey: currentKey)
+        }
+        
     }
     
 }
