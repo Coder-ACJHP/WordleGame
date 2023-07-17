@@ -23,7 +23,7 @@ class KeyboardViewController: UIViewController {
         return flowLayout
     }()
     
-    private lazy var collectionView: UICollectionView = {
+    internal lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: keyboardLayout)
         collectionView.register(KeyCell.self, forCellWithReuseIdentifier: KeyCell.id)
         collectionView.translatesAutoresizingMaskIntoConstraints = false

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol KeyboardViewControllerDelegate: AnyObject {
     func keyboardViewController(_ viewController: KeyboardViewController, didTapKey letter: Character)

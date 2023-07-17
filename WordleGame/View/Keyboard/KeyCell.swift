@@ -10,6 +10,7 @@ import UIKit
 class KeyCell: UICollectionViewCell {
     
     static let id = "KeyboardCellIdentifier"
+    public var letter: Character? = nil
     
     private let label: UILabel = {
         let label = UILabel(frame: .zero)
@@ -46,6 +47,7 @@ class KeyCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
+        letter = nil
         label.text = nil
     }
     
@@ -56,6 +58,7 @@ class KeyCell: UICollectionViewCell {
             label.text = "Delete"
         } else {
             label.text = String(letter).uppercased()
+            self.letter = letter
         }
     }
     

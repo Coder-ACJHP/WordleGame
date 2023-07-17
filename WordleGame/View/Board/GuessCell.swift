@@ -13,7 +13,6 @@ class GuessCell: UICollectionViewCell {
     public var letter: Character? = nil
     static let id = "BoardGuessCellIdentifier"
     
-    
     private let label: UILabel = {
         let label = UILabel(frame: .zero)
         label.textAlignment = .center

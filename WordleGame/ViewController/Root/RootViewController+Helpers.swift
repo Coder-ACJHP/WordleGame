@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension RootViewController {
     
@@ -45,19 +46,25 @@ extension RootViewController {
     
     internal final func gameIsOver() -> PosibileGameResult {
         
-        if guesses[5][4] != nil {
+        lastCursorSection = findLastSection()
+        var lastGuess = guesses[lastCursorSection]
+        var sectionWord = String(lastGuess.compactMap({$0 }))
+        
+        if guesses[5][4] != nil &&
+            sectionWord.lowercased() != answer.lowercased() {
             return .lose
         }
         
-        lastCursorSection = findLastSection()
+        var userWon = false
         for index in 0 ... lastCursorSection {
-            let section = guesses[index]
-            let sectionWord = String(section.compactMap({$0 }))
+            lastGuess = guesses[index]
+            sectionWord = String(lastGuess.compactMap({$0 }))
             if sectionWord.lowercased() == answer.lowercased() {
-                return .win
+                userWon = true
+                break
             }
         }
-        return .continues
+        return userWon ? .win : .continues
     }
     
     internal func resetGame() {

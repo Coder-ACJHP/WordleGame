@@ -26,7 +26,7 @@ class RootViewController: UIViewController {
         "Agree",    "Apart",    "Baker",    "Blind",
         "Bound",    "Calif",    "Civil",    "Crash",
         "Brief",    "Chart",    "Clock",    "Curve",
-        "Broke",   "Check",    "Coast",   "Dance",
+        "Broke",    "Check",    "Coast",    "Dance",
         "Built",    "Child",    "Court",    "Death",
         "Debut",    "Entry",    "Forth",    "Group",
         "Doing",    "Event",    "Found",    "Guess",
